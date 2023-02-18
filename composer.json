@@ -1,0 +1,19 @@
+{
+    "name": "doefom/squeeze",
+    "autoload": {
+        "psr-4": {
+            "Doefom\\Squeeze\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Squeeze",
+            "description": "Squeeze addon"
+        },
+        "laravel": {
+            "providers": [
+                "Doefom\\Squeeze\\ServiceProvider"
+            ]
+        }
+    }
+}
