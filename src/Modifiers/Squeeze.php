@@ -10,11 +10,11 @@ class Squeeze extends Modifier
      * Remove a given set of characters from a string.
      *
      * @param string $value The string to be modified
-     * @param array $params Any parameters used in the modifier
-     * @param array $context Contextual values
+     * @param array|null $params Any parameters used in the modifier
+     * @param array|null $context Contextual values
      * @return string
      */
-    public function index(string $value, array $params, array $context): string
+    public function index(string $value, ?array $params, ?array $context): string
     {
         // The strings to remove from the original string.
         $needles = [
