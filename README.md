@@ -28,7 +28,7 @@ In your `.yaml` files you probably have some kind of string variable like this:
 text: "A string that has colons:and /slashes"
 ```
 
-Then you can use the modifier like this:
+Then you can use the modifier in your antlers views like this:
 ```antlers
 {{ text | squeeze }}
 ```
