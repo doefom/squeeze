@@ -1,6 +1,6 @@
 # Squeeze
 
-Squeeze is a Statamic addon that provides a modifier named 'squeeze' which removes a bunch of characters from a given
+Squeeze is a Statamic addon that provides a modifier named `squeeze` which removes a bunch of characters from a given
 string by replacing them with an empty string.
 
 ## Features
@@ -8,9 +8,9 @@ string by replacing them with an empty string.
 This addon removes the following characters:
 
 - `_`
-- `-`,
-- `/`,
-- `:`,
+- `-`
+- `/`
+- `:`
 - ` ` (whitespace)
 
 ## How to Install
