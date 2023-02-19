@@ -1,14 +1,17 @@
 # Squeeze
 
-> Squeeze is a Statamic addon that does something pretty neat.
+Squeeze is a Statamic addon that provides a modifier named 'squeeze' which removes a bunch of characters from a given
+string by replacing them with an empty string.
 
 ## Features
 
-This addon does:
+This addon removes the following characters:
 
-- This
-- And this
-- And even this
+- `_`
+- `-`,
+- `/`,
+- `:`,
+- ` ` (whitespace)
 
 ## How to Install
 
@@ -20,4 +23,17 @@ composer require doefom/squeeze
 
 ## How to Use
 
-Here's where you can explain how to use this wonderful addon.
+In your `.yaml` files you probably have some kind of string variable like this:
+```yaml
+text: "A string that has colons:and /slashes"
+```
+
+Then you can use the modifier like this:
+```antlers
+{{ text | squeeze }}
+```
+
+Which outputs:
+```text
+Astringthathascolonsandslashes
+```

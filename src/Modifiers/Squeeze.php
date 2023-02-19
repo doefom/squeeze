@@ -7,11 +7,7 @@ use Statamic\Modifiers\Modifier;
 class Squeeze extends Modifier
 {
     /**
-     * Remove the following characters from a string:
-     * - _
-     * - -
-     * - /
-     * - [whitespace]
+     * Remove a given set of characters from a string.
      *
      * @param string $value The string to be modified
      * @param array $params Any parameters used in the modifier
@@ -20,9 +16,21 @@ class Squeeze extends Modifier
      */
     public function index(string $value, array $params, array $context): string
     {
-        $str = str_replace('_', '', $value);
-        $str = str_replace('-', '', $str);
-        $str = str_replace('/', '', $str);
-        return str_replace(' ', '', $str);
+        // The strings to remove from the original string.
+        $needles = [
+            '_',
+            '-',
+            '/',
+            ':',
+            ' '
+        ];
+
+        // Go through all needles and replace them with an empty string.
+        $str = $value;
+        foreach ($needles as $needle) {
+            $str = str_replace($needle, '', $str);
+        }
+
+        return $str;
     }
 }
