@@ -1,5 +1,6 @@
 {
     "name": "doefom/squeeze",
+    "description": "Squeeze is a Statamic addon that provides a modifier named squeeze which removes a bunch of characters from a given string by replacing them with an empty string.",
     "autoload": {
         "psr-4": {
             "Doefom\\Squeeze\\": "src"
@@ -8,7 +9,8 @@
     "extra": {
         "statamic": {
             "name": "Squeeze",
-            "description": "Squeeze addon"
+            "description": "Squeeze addon",
+            "editions": ["free"]
         },
         "laravel": {
             "providers": [
