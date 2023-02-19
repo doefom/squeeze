@@ -25,7 +25,7 @@ composer require doefom/squeeze
 
 In your `.yaml` files you probably have some kind of string variable like this:
 ```yaml
-text: "A string that has colons:and /slashes"
+text: "A_string-to/test:the squeeze"
 ```
 
 Then you can use the modifier in your antlers views like this:
@@ -35,5 +35,5 @@ Then you can use the modifier in your antlers views like this:
 
 Which outputs:
 ```text
-Astringthathascolonsandslashes
+Astringtotestthesqueeze
 ```
