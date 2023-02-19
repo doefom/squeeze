@@ -15,5 +15,6 @@
                 "Doefom\\Squeeze\\ServiceProvider"
             ]
         }
-    }
+    },
+    "license": "MIT"
 }
