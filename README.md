@@ -5,7 +5,7 @@ string by replacing them with an empty string.
 
 ## Features
 
-This addon removes the following characters:
+This addon removes the following characters by default:
 
 - `_`
 - `-`

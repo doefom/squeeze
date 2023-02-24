@@ -1,6 +1,7 @@
 {
     "name": "doefom/squeeze",
     "description": "Squeeze is a Statamic addon that provides a modifier named squeeze which removes a bunch of characters from a given string by replacing them with an empty string.",
+    "version": "0.2.0",
     "autoload": {
         "psr-4": {
             "Doefom\\Squeeze\\": "src"
