@@ -3,9 +3,14 @@
 namespace Doefom\Squeeze\Modifiers;
 
 use Statamic\Modifiers\Modifier;
+use Statamic\Support\Arr;
+use Statamic\Support\Str;
 
 class Squeeze extends Modifier
 {
+
+    const DEFAULT_NEEDLES = '_-/ :';
+
     /**
      * Remove a given set of characters from a string.
      *
@@ -17,18 +22,12 @@ class Squeeze extends Modifier
     public function index(string $value, ?array $params, ?array $context): string
     {
         // The strings to remove from the original string.
-        $needles = [
-            '_',
-            '-',
-            '/',
-            ':',
-            ' '
-        ];
+        $squeezables = str_split(Arr::get($params, 0, self::DEFAULT_NEEDLES));
 
         // Go through all needles and replace them with an empty string.
         $str = $value;
-        foreach ($needles as $needle) {
-            $str = str_replace($needle, '', $str);
+        foreach ($squeezables as $squeezable) {
+            $str = str_replace($squeezable, '', $str);
         }
 
         return $str;

@@ -19,7 +19,7 @@ class SqueezeTest extends TestCase
         $this->squeeze = new Squeeze();
     }
 
-    public function test_squeeze_mixed()
+    public function test_squeeze_defaults()
     {
         $this->assertEquals(
             $this->resultStr,
@@ -27,43 +27,35 @@ class SqueezeTest extends TestCase
         );
     }
 
-    public function test_squeeze_underscore()
+    public function test_squeeze_whitespace_at_beginning_defaults()
     {
         $this->assertEquals(
             $this->resultStr,
-            $this->squeeze->index("A_string_to_test_the_squeeze", null, null)
+            $this->squeeze->index(" A_string-to/test:the squeeze", null, null)
         );
     }
 
-    public function test_squeeze_dash()
+    public function test_squeeze_whitespace_at_beginning_defaults_end()
     {
         $this->assertEquals(
             $this->resultStr,
-            $this->squeeze->index("A-string-to-test-the-squeeze", null, null)
+            $this->squeeze->index(" A_string-to/test:the squeeze", null, null)
         );
     }
 
-    public function test_squeeze_slash()
+    public function test_squeeze_backslash_defaults()
     {
-        $this->assertEquals(
+        $this->assertNotEquals(
             $this->resultStr,
-            $this->squeeze->index("A/string/to/test/the/squeeze", null, null)
+            $this->squeeze->index(" A_string-to\\test:the squeeze", null, null)
         );
     }
 
-    public function test_squeeze_colon()
+    public function test_squeeze_with_params()
     {
         $this->assertEquals(
             $this->resultStr,
-            $this->squeeze->index("A:string:to:test:the:squeeze", null, null)
-        );
-    }
-
-    public function test_squeeze_whitespace()
-    {
-        $this->assertEquals(
-            $this->resultStr,
-            $this->squeeze->index("A string to test the squeeze", null, null)
+            $this->squeeze->index("A_string to/test\\the-squeeze", ["_ /\\-"], null)
         );
     }
 
