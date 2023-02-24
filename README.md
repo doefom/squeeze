@@ -32,7 +32,7 @@ text: "A_string-to/test:the squeeze"
 
 Then you can use the modifier in your antlers views like this:
 
-```php
+```text
 {{ text | squeeze }}
 ```
 
@@ -46,7 +46,7 @@ Astringtotestthesqueeze
 
 You may also pass your own squeezables to the modifier like so:
 
-```php
+```text
 {{ text | squeeze:":-(" }}
 ```
 
@@ -54,7 +54,7 @@ You may also pass your own squeezables to the modifier like so:
 
 It's also possible to squeeze whitespaces but they cannot be the last character of the squeezables string:
 
-```php
+```text
 {{ text | squeeze:"-_ :(" }} // This will work
 {{ text | squeeze:" -_:(" }} // This will work
 {{ text | squeeze:"-_:( " }} // This will not work
@@ -62,6 +62,6 @@ It's also possible to squeeze whitespaces but they cannot be the last character 
 
 Also, if you want to squeeze backslashes you'll need to escape them:
 
-```php
+```text
 {{ text | squeeze:"\\" }} // This squeezes a backslash
 ```
